@@ -32,6 +32,15 @@ resource "aws_instance" "instance" {
   subnet_id              = aws_subnet.subnet.id
   iam_instance_profile   = var.iam_instance_profile
 
+  instance_market_options {
+    market_type = "spot"
+    
+    spot_options {
+      spot_instance_type             = "persistent"
+      instance_interruption_behavior = "stop"
+    }
+  }
+
   root_block_device {
     volume_type           = "gp3"
     volume_size           = "256" # GB
