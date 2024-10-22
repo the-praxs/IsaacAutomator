@@ -21,3 +21,5 @@ uploads/*
 
 src/ansible/roles/isaac/files/autorun.sh
 src/ansible/roles/isaac/files/isaaclab.pem
+
+.vscode/*
